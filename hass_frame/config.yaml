@@ -18,3 +18,4 @@ options:
   tv: "192.168.1.199"
 schema:
   tv: "str?"
+image: "ghcr.io/gijsvdhoven/{arch}-addon-hass-frame-changer"
