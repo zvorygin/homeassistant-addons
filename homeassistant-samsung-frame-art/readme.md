@@ -4,7 +4,7 @@
 
 I love the Samsung Frame TV—which is designed to look like art when it's off—but I got tired of paying a monthly fee for the official art. I also found uploading images to it manually to be tedious, especially when using a very large set of images, like those from Google's Earth View image library.
 
-dit is een test..
+dit is een test..KJKKK
 
 This Python script allows you to change your Samsung Frame's art based on a folder of images on your computer. The script picks an image from folder on your computer, then sends it to your TV and sets it as the active image automatically—it also does its best to try not repeatedly upload the same photo to your TV.
 
