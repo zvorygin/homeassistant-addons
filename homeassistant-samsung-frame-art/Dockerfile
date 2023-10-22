@@ -10,8 +10,6 @@ RUN \
 COPY run.sh /
 COPY art.py /
 
-ADD /images /images
-
 
 RUN chmod a+x /run.sh
 
