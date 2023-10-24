@@ -21,7 +21,7 @@ args = parser.parse_args()
 folder_path = '/media/frame'
 
 # Set the path to the file that will store the list of uploaded filenames
-upload_list_path = './uploaded_files.json'
+upload_list_path = '/data/uploaded_files.json'
 
 # Load the list of uploaded filenames from the file
 if os.path.isfile(upload_list_path):
