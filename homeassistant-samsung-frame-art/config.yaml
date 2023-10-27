@@ -18,4 +18,4 @@ options:
   tv: "192.168.1.199"
 schema:
   tv: "str?"
-image: gijsvdhoven/home-assistant-addons/{arch}-addon-homeassistant-samsung-frame-art
+image: gijsvdhoven/{arch}-addon-homeassistant-samsung-frame-art
