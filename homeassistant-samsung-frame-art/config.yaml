@@ -19,7 +19,6 @@ options:
 schema:
   tv: "str?"
 labels:
-
   io.hass.name="Home Assistant Samsung the Frame changer for ${BUILD_ARCH}" 
   io.hass.description="Home Assistant Add-on: ${BUILD_ARCH} Home Assistant Samsung the Frame changer" 
   io.hass.arch="${BUILD_ARCH}" 
