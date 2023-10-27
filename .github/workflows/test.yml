@@ -15,5 +15,5 @@ jobs:
           args: |
             --test \
             --all \
-            --target addon-folder /data/homeassistant-samsung-frame-art \
+            --target /data/homeassistant-samsung-frame-art \
             --docker-hub gijsvdhoven
