@@ -22,4 +22,4 @@ jobs:
           args: |
             --all \
             --target /data/homeassistant-samsung-frame-art \
-            --docker-hub gijsvdhoven
+            --docker-hub gijsvdhoven/home-assistant-addons
