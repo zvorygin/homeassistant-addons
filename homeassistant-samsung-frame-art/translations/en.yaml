@@ -1,4 +1,0 @@
-configuration:
-  tv-ip:
-    name: IP Adress of the Samsung The Frame
-    description: Please make sure the IP adress of the Frame is static

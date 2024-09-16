@@ -3,7 +3,7 @@ name: "Publish"
 on:
   workflow_dispatch:
   release:
-    types: [published, workflow_dispatch]
+    types: [published]
 
 jobs:
   publish:
@@ -22,5 +22,5 @@ jobs:
         with:
           args: |
             --all \
-            --target /data/homeassistant-samsung-frame-art \
-            --docker-hub gijsvdhoven
+            --target /data/homeassistant-samsung-frametv-artchanger \
+            --docker-hub vivalatech \
