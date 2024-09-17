@@ -107,6 +107,9 @@ if remote_filename is None:
     try:
         logging.info(f'Uploading image')
         remote_filename = tv.art().upload(image_data.getvalue(), file_type=file_type, matte="none")
+        if remote_filename is None:
+            raise Exception('No remote filename returned')
+
         tv.art().select_image(remote_filename, show=True)
         logging.info(f'Image uploaded and selected')
         # Add the filename to the list of uploaded filenames
@@ -116,7 +119,7 @@ if remote_filename is None:
             json.dump(uploaded_files, f)
     except Exception as e:
         logging.error(f'There was an error uploading the image: ' + str(e))
-        sys.exit()
+        sys.exit(1)
 else:
     if not args.upload_all:
         # Select the image using the remote file name only if not in 'upload-all' mode
