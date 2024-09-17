@@ -29,6 +29,8 @@ COPY run.sh /
 COPY *.py /
 RUN mkdir -p /sources/
 COPY sources/*.py /sources/
+RUN mkdir -p /utils/
+COPY utils/*.py /utils/
 
 RUN chmod a+x /run.sh
 
