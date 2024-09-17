@@ -1,10 +1,6 @@
 #!/usr/bin/with-contenv bashio
 
 TVIP=$(bashio::config 'tv')
-DOWNLOAD_HIGH_RES=$(bashio::config 'download_high_res')
-GOOGLE_ART=$(bashio::config 'googleart')
-BING_WALLPAPERS=$(bashio::config 'bing_wallpapers')
-MEDIA_FOLDER=$(bashio::config 'media_folder')
 
 mkdir -p /media/frame
 echo "Using ${TVIP} as the IP of the Samsung Frame"

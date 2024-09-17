@@ -7,6 +7,8 @@ It adds the ability to push images from different sources to your Samsung Frame 
 
 By starting the add-on it will randomly pick an image based on your configuration and put it on your frame; after the image is placed the add-on will automatically stop again. This for instance can be triggered via an automation to run on a daily basis. Please find an example below.
 
+If multiple sources are enabled it will randomly choose a source on each run. 
+
 # Google Art
 By default the addon configuration has "Google Art" mode enabled which instead of taking images from the "media" folder takes random images from the Google Arts and Culture site and pushes it to the Samsung Frame TV. 
 
@@ -14,7 +16,10 @@ By default the addon configuration has "Google Art" mode enabled which instead o
 The addon now also supports "Bing Wallpapers" mode, which allows you to display random high-quality wallpapers from Bing on your Samsung Frame TV.
 
 # Local Media Folder
-Looks for images in the /media/frame folder and randomly pushes an image to your Samsung Frame TV
+Looks for images in the /media/frame folder and randomly pushes an image to your Samsung Frame TV. When you start the addon for the first time it creates a specific directory in Media called "frame" where you can place your custom images.
+
+Please note you must upload pictures with a lower-case extension and only .png and .jpg are supported.
+
 
 ## Installation
 
@@ -30,9 +35,6 @@ Install this addon by adding the repository:
 3. **Bing Wallpapers**: Enable to use random high-quality wallpapers from Bing.
 4. **High Res**: (For Google Art only) Enable to get high-resolution images using dezoomify.
 
-When you start the addon for the first time it creates a specific directory in Media called "frame" where you can place your custom images.
-
-Please note you must upload pictures with a lower-case extension and only .png and .jpg are supported.
 
 ## Example Automation
 
