@@ -53,4 +53,9 @@ action:
       addon: local_hass-frametv-artchanger
 ```
 
-You can customize this automation based on your preferences and the configuration options you've chosen in the addon.
+## TODO
+
+Here's some ideas for stuff to implement
+- [ ] Delete old N images on TV, e.g. configurable to keep last 100 uploaded images and delete an older image everytime a new one is uploaded
+- [ ] More sources, especially something for high res contemporary art would be awesome or other curated sources
+- [ ] Dashboard card that shows currently active art and maybe allows selection of other art
