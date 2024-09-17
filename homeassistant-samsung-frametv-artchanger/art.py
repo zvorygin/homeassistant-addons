@@ -90,7 +90,12 @@ if not sources:
 selected_source = random.choice(sources)
 logging.info(f'Selected source: {selected_source.__class__.__name__}')
 
-image_data: Optional[BytesIO]; file_type: Optional[str]; image_info: Optional[str]; remote_filename: Optional[str] = selected_source.get_image()
+image_data: Optional[BytesIO]
+file_type: Optional[str]
+image_info: Optional[str]
+remote_filename: Optional[str]
+
+image_data, file_type, image_info, remote_filename = selected_source.get_image()
 if image_data is None:
     sys.exit(1)
 
