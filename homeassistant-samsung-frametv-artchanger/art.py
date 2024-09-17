@@ -5,6 +5,7 @@ import json
 import argparse
 from io import BytesIO
 import random
+from typing import List, Optional, Union
 
 sys.path.append('../')
 
@@ -58,23 +59,23 @@ if args.debug:
         logging.error('Could not reach the TV: ' + str(e))
         sys.exit(1)
 
-def save_debug_image(image_data, filename):
+def save_debug_image(image_data: BytesIO, filename: str) -> None:
     if args.debugimage:
         with open(filename, 'wb') as f:
             f.write(image_data.getvalue())
         logging.info(f'Debug image saved as {filename}')
 
 # Checks if the TV supports art mode
-art_mode = tv.art().supported()
+art_mode: bool = tv.art().supported()
 
 if art_mode != True:
     logging.warning('Your TV does not support art mode.')
     sys.exit(1)
 
 # Retrieve information about the currently selected art
-current_art = tv.art().get_current()
+current_art: Optional[dict] = tv.art().get_current()
 
-sources = []
+sources: List[Union[BingWallpapers, GoogleArt, MediaFolder]] = []
 if args.bing_wallpapers:
     sources.append(BingWallpapers())
 if args.googleart:
@@ -89,7 +90,7 @@ if not sources:
 selected_source = random.choice(sources)
 logging.info(f'Selected source: {selected_source.__class__.__name__}')
 
-image_data, file_type, image_info, remote_filename = selected_source.get_image()
+image_data: Optional[BytesIO]; file_type: Optional[str]; image_info: Optional[str]; remote_filename: Optional[str] = selected_source.get_image()
 if image_data is None:
     sys.exit(1)
 
