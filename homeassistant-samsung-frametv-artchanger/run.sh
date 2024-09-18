@@ -3,12 +3,12 @@
 TVIP=$(bashio::config 'tv')
 
 mkdir -p /media/frame
-echo "Using ${TVIP} as the IP of the Samsung Frame"
+echo "Using ${TVIP} as the IP's of the Samsung Frame"
 
 PARAMS=""
 
 if bashio::config.true 'googleart'; then
-    PARAMS="${PARAMS} --googleart"
+    PARAMS="${PARAMS} --google-art"
 fi
 if bashio::config.true 'bing_wallpapers'; then
     PARAMS="${PARAMS} --bing-wallpapers"
