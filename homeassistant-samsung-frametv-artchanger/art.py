@@ -9,7 +9,7 @@ import random
 sys.path.append('../')
 
 from samsungtvws import SamsungTVWS
-from sources import bing_wallpapers, google_art, media_folder
+from sources import bing_wallpapers, google_art, media_folder, google_photos
 from utils.utils import Utils
 
 # Add command line argument parsing
@@ -22,6 +22,8 @@ parser.add_argument('--google-art', action='store_true', help='Download and uplo
 parser.add_argument('--download-high-res', action='store_true', help='Download high resolution image using dezoomify-rs')
 parser.add_argument('--bing-wallpapers', action='store_true', help='Download and upload image from Bing Wallpapers')
 parser.add_argument('--media-folder', action='store_true', help='Use images from the local media folder')
+parser.add_argument('--google-photos', action='store_true', help='Download and upload image from Google Photos')
+parser.add_argument('--google-photos-album', help='Google Photos album name to use')
 parser.add_argument('--debugimage', action='store_true', help='Save downloaded and resized images for inspection')
 
 args = parser.parse_args()
@@ -46,9 +48,11 @@ if args.google_art:
     sources.append(google_art)
 if args.media_folder:
     sources.append(media_folder)
+if args.google_photos:
+    sources.append(google_photos)
 
 if not sources:
-    logging.error('No image source specified. Please use --google-art, --bing-wallpapers, or --media-folder')
+    logging.error('No image source specified. Please use --google-art, --bing-wallpapers, --media-folder, or --google-photos')
     sys.exit(1)
 
 tvip = args.tvip.split(',') if args.tvip else []

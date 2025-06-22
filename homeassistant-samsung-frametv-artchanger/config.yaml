@@ -21,6 +21,10 @@ options:
   bing_wallpapers: false
   media_folder: false
   same_image: false
+  google_photos: false
+  google_photos_album: ""
+  google_photos_client_id: ""
+  google_photos_client_secret: ""
 schema:
   tv: "str?"
   google_art: "bool?"
@@ -28,4 +32,8 @@ schema:
   bing_wallpapers: "bool?"
   media_folder: "bool?"
   same_image: "bool?"
+  google_photos: "bool?"
+  google_photos_album: "str?"
+  google_photos_client_id: "str?"
+  google_photos_client_secret: "password?"
 image: vivalatech/{arch}-addon-homeassistant-samsung-frametv-artchanger

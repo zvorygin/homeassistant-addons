@@ -3,7 +3,7 @@
 ![TV with some art on it ](https://i.imgur.com/BunHdwb.jpeg)
 
 This add-on is built on the awesome work of <https://github.com/ow/samsung-frame-art> and <https://github.com/gijsvdhoven/homeassistant-addons>. 
-It adds the ability to push images from different sources to your Samsung Frame TV, currently supported are Google Art and Culture, Bing Wallpapers and Local Media folder. 
+It adds the ability to push images from different sources to your Samsung Frame TV, currently supported are Google Art and Culture, Bing Wallpapers, Google Photos, and Local Media folder. 
 
 By starting the add-on it will randomly pick an image based on your configuration and put it on your frame; after the image is placed the add-on will automatically stop again. This for instance can be triggered via an automation to run on a daily basis. Please find an example below.
 
@@ -14,6 +14,24 @@ By default the addon configuration has "Google Art" mode enabled which instead o
 
 # Bing Wallpaper
 The addon now also supports "Bing Wallpapers" mode, which allows you to display random high-quality wallpapers from Bing on your Samsung Frame TV.
+
+# Google Photos
+The addon now supports "Google Photos" mode, which allows you to display random images from a specific Google Photos album on your Samsung Frame TV. To use this feature, you'll need to set up Google Photos API credentials and specify the album name in the configuration.
+
+## Setting up Google Photos Integration
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing one
+3. Enable the Google Photos Library API
+4. Create OAuth 2.0 credentials (Desktop Application type)
+5. Copy the Client ID and Client Secret from your credentials
+6. In the Home Assistant addon configuration:
+   - Enable "Google Photos"
+   - Enter your album name in "Google Photos Album"
+   - Paste your Client ID in "Google Photos Client ID"
+   - Paste your Client Secret in "Google Photos Client Secret"
+7. The first time you run the addon with Google Photos enabled, it will prompt you to authenticate via a web browser
+8. After authentication, a token file will be created automatically for future use
 
 # Local Media Folder
 Looks for images in the /media/frame folder and randomly pushes an image to your Samsung Frame TV. When you start the addon for the first time it creates a specific directory in Media called "frame" where you can place your custom images.
@@ -33,7 +51,13 @@ Install this addon by adding the repository:
 1. **IP Address**: Set the IP address of your Samsung The Frame TV.
 2. **Google Art**: Enable to use random images from Google Arts and Culture.
 3. **Bing Wallpapers**: Enable to use random high-quality wallpapers from Bing.
-4. **High Res**: (For Google Art only) Enable to get high-resolution images using dezoomify.
+4. **Google Photos**: Enable to use images from a specific Google Photos album.
+5. **Google Photos Album**: Name of the Google Photos album to use (only used when Google Photos is enabled).
+6. **Google Photos Client ID**: OAuth 2.0 Client ID from Google Cloud Console (only used when Google Photos is enabled).
+7. **Google Photos Client Secret**: OAuth 2.0 Client Secret from Google Cloud Console (only used when Google Photos is enabled).
+8. **Media Folder**: Enable to use images from the local media folder (/media/frame).
+9. **Same Image**: Use the same image across multiple TVs (if you have multiple Frame TVs configured).
+10. **High Res**: (For Google Art only) Enable to get high-resolution images using dezoomify.
 
 
 ## Example Automation
