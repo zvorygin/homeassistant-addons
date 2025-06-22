@@ -17,3 +17,12 @@ configuration:
   same_image:
     name: Same Image
     description: Use the same image for all TVs when multiple TVs are specified
+  google_photos:
+    name: Google Photos
+    description: Download a random image from Google Photos
+  google_photos_album:
+    name: Google Photos Album
+    description: Google Photos album name to use
+  google_photos_client_id:
+    name: Google Photos Client ID
+    description: Google Photos client ID

@@ -28,7 +28,7 @@ if bashio::config.true 'google_photos'; then
     GOOGLE_PHOTOS_CLIENT_SECRET=$(bashio::config 'google_photos_client_secret')
     export GOOGLE_PHOTOS_CLIENT_ID
     export GOOGLE_PHOTOS_CLIENT_SECRET
-    PARAMS="${PARAMS} --google-photos --google-photos-album '${GOOGLE_PHOTOS_ALBUM}'"
+    PARAMS="${PARAMS} --google-photos --google-photos-album \"${GOOGLE_PHOTOS_ALBUM}\""
 fi
 
 python3 art.py --tvip ${TVIP} ${PARAMS}
